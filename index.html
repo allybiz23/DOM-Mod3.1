@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IT Support Requests</title>
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+    <h2>Login</h2>
+    <form id="loginForm" onsubmit="onLogin(); return false;">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <div id="welcomeMessage" style="display: none;"></div>
+    <div id="errorMessage" style="color: red;"></div>
+
+    <h2>Support Ticket</h2>
+    <form>
+        <label for="ticketType">Select Ticket Type:</label>
+        <select id="ticketType" onchange="showFormFields()">
+            <option value="computer">Computer</option>
+            <option value="software">Software</option>
+            <option value="network">Network</option>
+        </select>
+    </form>
+
+    <div id="computerFields" style="display: none;">
+        <label for="computerIssue">Computer Issue:</label>
+        <input type="text" id="computerIssue">
+    </div>
+    <div id="softwareFields" style="display: none;">
+        <label for="softwareIssue">Software Issue:</label>
+        <input type="text" id="softwareIssue">
+    </div>
+    <div id="networkFields" style="display: none;">
+        <label for="networkIssue">Network Issue:</label>
+        <input type="text" id="networkIssue">
+    </div>
+
+    <button type="button" onclick="showTicketSummary()">Show Summary</button>
+
+    <div id="summary" style="display: none; border: 1px solid #000; padding: 10px; margin-top: 10px;">
+        <!-- Summary will be displayed here -->
+    </div>
+</body>
+
+</html>
